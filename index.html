@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Random Background</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: Arial, sans-serif;
+    }
+
+    button {
+      padding: 15px 25px;
+      font-size: 18px;
+      cursor: pointer;
+      border: none;
+      border-radius: 10px;
+      background: rgba(0,0,0,0.6);
+      color: white;
+    }
+
+    button:hover {
+      background: rgba(0,0,0,0.8);
+    }
+  </style>
+</head>
+<body>
+
+<button onclick="changeBackground()">Change Background</button>
+
+<script>
+  function changeBackground() {
+    const randomId = Math.floor(Math.random() * 1000);
+    const url = `https://picsum.photos/id/${randomId}/1920/1080`;
+    document.body.style.backgroundImage = `url('${url}')`;
+  }
+
+  // Optional: load one on start so it's not blank
+  changeBackground();
+</script>
+
+</body>
+</html>
